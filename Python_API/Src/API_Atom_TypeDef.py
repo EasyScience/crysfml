@@ -16,7 +16,7 @@ import CFML_api.crysfml_api
 import CFML_api.FortranBindedClass
 
 class Atom(CFML_api.FortranBindedClass):
-    """ Class for a given aton type(Atom_type) in CFML
+    """ Class for a given atom type(Atom_type) in CFML
 
     ... 
     Attributes
