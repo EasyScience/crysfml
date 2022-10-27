@@ -19,7 +19,7 @@ function repair_wheel {
 # Compile wheels
 #for PYBIN in /opt/python/*/bin; do
 export PYBIN=/opt/python/cp38-cp38/bin
-"${PYBIN}/pip" wheel /io/ --no-deps --use-feature=in-tree-build -w /io/dist/
+"${PYBIN}/pip" wheel /io/ --no-deps -w /io/dist/
 rm -rf /io/build/
 #done
 
