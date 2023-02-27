@@ -1,0 +1,45 @@
+[build-system]
+# Minimum requirements for the build system to execute.
+requires = [
+    "setuptools>=61",
+    "wheel",
+    "cmake",
+    "setuptools_scm[toml]>=3.4",
+    "numpy",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CFML"
+authors = [
+    {name = "Juan Rodriguez-Carvajal", email = "jrc@ill.fr"},
+    {name = "Elisa Rebolini", email = "rebolini@ill.fr"},
+    {name = "Simon Ward", email = "2798086+wardsimon@users.noreply.github.com"}
+]
+description = "The Crystallographic Fortran Modules Library (CrysFML) is a set of modules containing procedures of interest in Crystallographic applications."
+readme = "README.md"
+requires-python = ">=3.7" # py36 is not supported by setuptools > 60
+license = {text = "LGPL-3.0-or-later"}
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: LGPL License",
+    "GNU Lesser General Public License v3 (LGPLv3)",
+    "Natural Language :: English",
+    "Programming Language :: Fortran",
+    "Programming Language :: Python"
+]
+dependencies = [
+    "numpy >= 1.21"
+]
+dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+where = ["gfortran"]
+
+
+[tool.setuptools.dynamic]
+version = {file = "Python_API/Src/__version__"}
+
+[tool.cibuildwheel]
+test-command = "python -m unittest discover -s {project}/Python_API/Tests"
+skip = "pp*"
