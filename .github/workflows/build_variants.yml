@@ -34,7 +34,7 @@ jobs:
     needs: get_Latest
 
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: CrysFML_SRC
 
@@ -60,7 +60,7 @@ jobs:
     needs: get_Latest
 
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
       with:
         name: CrysFML_SRC
 
@@ -124,7 +124,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [create-Linux, create-OSX]
     steps:
-    - uses: actions/download-artifact@v2
+    - uses: actions/download-artifact@v4.1.7
     - name: What is downloaded
       run: |
         ls -al
